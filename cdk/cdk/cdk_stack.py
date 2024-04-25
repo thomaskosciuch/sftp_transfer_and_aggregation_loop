@@ -57,6 +57,7 @@ class IbmsmStack(Stack):
                     ]
                 )
             ),
+            memory_size=128,
             layers=[sqlalchemy_layer, sftp_layer],
             
             environment={
@@ -86,6 +87,7 @@ class IbmsmStack(Stack):
                     ]
                 )
             ),
+            memory_size=2048,
             layers=[sqlalchemy_layer, sftp_layer],
             environment=env_vars
         )
