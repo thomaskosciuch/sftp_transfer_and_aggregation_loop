@@ -4,6 +4,7 @@ from aws_cdk import (
     aws_events,
     aws_events_targets,
     # aws_rds,
+    Duration,
     aws_sns,
     aws_sns_subscriptions,
     Stack
@@ -87,6 +88,7 @@ class IbmsmStack(Stack):
                     ]
                 )
             ),
+            timeout=Duration.minutes(10),
             memory_size=2048,
             layers=[sqlalchemy_layer, sftp_layer],
             environment=env_vars
